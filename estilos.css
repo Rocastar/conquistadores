@@ -70,6 +70,7 @@ header #Logo img {
 
 nav {
   background: #80bca3;
+  box-shadow: rgba(0,0,0,0.5) 0px 0px 10px;
   padding: 0 0.5em;
   position: relative;
 }
@@ -105,4 +106,75 @@ nav ul li a {
   color: white;
   display: block;
   padding: 0.5em 0;
+}
+
+#Contenido {
+  margin: 1em;
+}
+
+#Contenido .item {
+  background: white;
+  border-bottom: 3px solid #22bce0;
+  margin-bottom: 3em;
+  min-height: 128px;
+  position: relative;
+}
+
+#Contenido .item .autor_item {
+  color: #aaa;
+}
+
+#Contenido .item .datos_item {
+  margin: 1em 1em 0 0;
+  text-align: right;
+}
+
+#Contenido .item .datos_item .fecha_item {
+  color: #aaa;
+}
+
+#Contenido .item .datos_item .tag_item {
+  background: #f4502a;
+  border-radius: 0.5em;
+  color: white;
+  float: left;
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  text-decoration: none;
+}
+
+#Contenido .item .img_item {
+  float: left;
+  margin: 0 1em 0 0;
+}
+
+#Contenido .item .img_item img {
+  width: 96px;
+}
+
+#Contenido .item .titulo_item {
+  font-size: 1.2em;
+  font-style: italic;
+  padding: 1em 1em 0 0;
+}
+
+#Contenido .item .titulo_item a {
+  color: #444;
+  text-decoration: none;
+}
+
+#Contenido .item .votacion_item {
+  background: white;
+  border-radius: 0 0 0.5em 0.5em;
+  left: 1%;
+  margin-top: 3px;
+  padding: 0.2em 0.5em;
+  position: absolute;
+  top: 100%;
+  width: 95%;
+}
+
+#Contenido .item .votacion_item .comentarios_item,
+#Contenido .item .votacion_item .guardar_item {
+  float: right;
 }
