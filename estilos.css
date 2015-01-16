@@ -1,10 +1,90 @@
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('fuentes/OpenSans-Regular-webfont.eot');
+    src: url('fuentes/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fuentes/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fuentes/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'fconquis';
+  src:url('fuentes/fconquis.eot?-1jmck0');
+  src:url('fuentes/fconquis.eot?#iefix-1jmck0') format('embedded-opentype'),
+    url('fuentes/fconquis.woff?-1jmck0') format('woff'),
+    url('fuentes/fconquis.ttf?-1jmck0') format('truetype'),
+    url('fuentes/fconquis.svg?-1jmck0#fconquis') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'fconquis';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-lapiz_1:before {
+  content: "\e603";
+  margin-right: 0.2em;
+}
+
+.icon-estrella_1:before {
+  color: orange;
+  content: "\e600";
+  margin-right: 0.4em;
+  position: relative;
+  top: 0.1em;
+}
+
+.icon-estrella_2:before {
+  content: "\e602";
+}
+
+.icon-flecha_down_2:before {
+  content: "\e604";
+}
+
+.icon-flecha_up_2:before {
+  content: "\e605";
+}
+
+.icon-flecha_down_1:before {
+  color: red;
+  content: "\e606";
+  /* font-size: 2em; */
+}
+
+.icon-flecha_up_1:before {
+  color: green;
+  content: "\e607";
+  /* font-size: 2em; */
+}
+
+.icon-lapiz_2:before {
+  content: "\e601";
+  margin-right: 0.2em;
+}
+
+
 a {
   color: #22bce0;
 }
 
 body {
   background: #eeeeee;
-  font-family: Arial;
+  font-family: "open_sansregular";
   font-size: 16px;
 }
 
@@ -61,17 +141,36 @@ header #Avatar img {
   width: 55px;
 }
 
-header #Logo img {
+header #Logo {
   border-right: 1px solid white;
-  margin-right: 0.5em;
+  margin-right: 0.5em;  
+}
+
+header #Logo img {
+  margin-right: 0.5em;  
   padding-right: 0.5em;
   width: 52px;
+  /*-webkit-transition: .7s;
+  -o-transition: .7s;
+  -moz-transition: .7s;
+  -ms-transition: .7s;*/
+}
+
+header #Logo img:hover {
+  -webkit-transition: .7s;
+  -o-transition: .7s;
+  -moz-transition: .7s;
+  -ms-transition: .7s;
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);  
 }
 
 nav {
   background: #80bca3;
   box-shadow: rgba(0,0,0,0.5) 0px 0px 10px;
-  padding: 0 0.5em;
+  padding: 0 5.8em 0 0.3em;
   position: relative;
 }
 
@@ -82,6 +181,7 @@ nav ul{
 }
 
 nav ul #PublicarNav {
+  margin-right: 1em; 
   position: absolute;
   top: -0.3em;
   right: 0;
@@ -92,20 +192,42 @@ nav ul #PublicarNav a {
   border-radius: 5px;
   box-shadow: rgba(0,0,0,0.5) 5px 5px 20px;
   font-style: italic;
-  padding: 0.8em 0.5em;
+  padding: 0.8em 0.5em 0.8em 2.2em;
   text-decoration: none;
   text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
 }
 
+nav ul #PublicarNav a:before {
+  left: .5em;
+  position: absolute;
+  top: .75em
+}
+
+nav ul #PublicarNav a:hover:before {
+  font-size: 18px;
+}
+
 nav ul li {
   display: inline-block;
-  margin: 0 1em 0 0;
+  margin: 0;
 }
 
 nav ul li a {
   color: white;
   display: block;
-  padding: 0.5em 0;
+  padding: 0.5em;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  -moz-transition: .5s;
+  -ms-transition: .5s;
+}
+
+nav ul li a:hover {
+  background: #0A9475;
+}
+
+aside {
+  display: none;
 }
 
 #Contenido {
@@ -174,7 +296,43 @@ nav ul li a {
   width: 95%;
 }
 
+#Contenido .item .votacion_item a {
+  text-decoration: none;
+}
+
 #Contenido .item .votacion_item .comentarios_item,
 #Contenido .item .votacion_item .guardar_item {
   float: right;
+}
+
+@media print {
+  body {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 800px){
+  #Contenido {
+    overflow: hidden;
+  }
+  #Contenido .item {
+    float: left;
+    /*margin-right: 1%;*/
+    width: 49%;
+  }
+  #Contenido .item:nth-child(odd) {
+    margin-right: 2%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  aside {
+    display: block;
+    float: right;
+    margin: 1em;
+    width: 20%;
+  }
+  aside video {
+    width: 100%;
+  }
 }
